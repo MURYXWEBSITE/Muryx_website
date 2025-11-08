@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet>
 </head>
 <body>
-    <!-- Audio Player (Auto-play loop) -->
-    <audio id="backgroundMusic" loop>
-        <source src="Sad Hamster Violin Meme (Full).mp3" type="audio/mpeg">
-    </audio>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <h1 class="rip-text">RIP TEHO</h1>
+            <h2 class="memory-text">IN MEMORY OF TEHO</h2>
+            <button class="join-button" id="joinButton">JOIN</button>
+        </div>
+    </div>
 
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content hidden">
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -27,9 +33,6 @@
                 <a href="#tokenomics" class="nav-link">Tokenomics</a>
                 <a href="#donations" class="nav-link">Donations</a>
             </nav>
-            <button class="music-toggle" id="musicToggle">
-                <span class="music-icon">🔊</span>
-            </button>
         </div>
     </header>
 
@@ -37,34 +40,27 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="memorial-badge">
-                    <span>✨ In Memory of Teho ✨</span>
-                </div>
                 <h1 class="hero-title">MURYX</h1>
                 <p class="hero-subtitle">Teho's Legacy Lives On</p>
                 
                 <div class="muryx-images">
                     <img src="muryx .jpeg" alt="Muryx Mascot" class="muryx-img muryx-img-1">
-                    <img src="muryx 2.jpeg" alt="Muryx Character" class="muryx-img muryx-img-2">
                 </div>
 
-                <div class="contract-address">
-                    <label>Contract Address:</label>
-                    <div class="address-box">
-                        <span id="contractAddress">9jFbN6wAAYPBvnfpSrchXLGx94LEb8f8S6ysadpXpump</span>
-                        <button class="copy-btn" onclick="copyAddress()">
-                            <span class="copy-icon">📋</span>
-                        </button>
-                    </div>
+                <div class="contract-address-simple">
+                    <span id="contractAddress">9jFbN6wAAYPBvnfpSrchXLGx94LEb8f8S6ysadpXpump</span>
+                    <button class="copy-btn-simple" onclick="copyAddress()">
+                        <span class="copy-icon">📋</span>
+                    </button>
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="https://x.com/i/communities/1986680588175049187" target="_blank" class="btn btn-primary">
-                        <span class="btn-icon">𝕏</span>
+                    <a href="https://x.com/i/communities/1986680588175049187" target="_blank" class="btn btn-outline">
+                        <img src="twitter logo-kopia.avif" alt="X" class="btn-logo">
                         Join X Community
                     </a>
-                    <a href="https://dexscreener.com/solana/hqjgeld8ty2dpb1fnug9rskzyk4ausbgh47tnqpwtswr" target="_blank" class="btn btn-secondary">
-                        <span class="btn-icon">📊</span>
+                    <a href="https://dexscreener.com/solana/hqjgeld8ty2dpb1fnug9rskzyk4ausbgh47tnqpwtswr" target="_blank" class="btn btn-outline">
+                        <img src="dexscreener logo-kopia.png" alt="DEX" class="btn-logo">
                         View on DEX Screener
                     </a>
                 </div>
@@ -132,9 +128,6 @@
                         <span class="btn-icon">🔍</span>
                         View Proof of Lock
                     </a>
-                </div>
-                <div class="tokenomics-visual">
-                    <img src="muryx 2.jpeg" alt="Muryx Token" class="token-img">
                 </div>
             </div>
         </div>
@@ -221,5 +214,6 @@
     </footer>
 
     <script src="script.js"></script>
+    </div>
 </body>
 </html>

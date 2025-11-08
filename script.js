@@ -1,63 +1,21 @@
 // ==================== 
-// Background Music Control
+// Loading Screen
 // ====================
 
-const music = document.getElementById('backgroundMusic');
-const musicToggle = document.getElementById('musicToggle');
-let isPlaying = false;
+const loadingScreen = document.getElementById('loadingScreen');
+const mainContent = document.getElementById('mainContent');
+const joinButton = document.getElementById('joinButton');
 
-// Try to autoplay music when page loads
-window.addEventListener('load', () => {
-    // Modern browsers require user interaction before playing audio
-    // This attempts to play, but will be blocked until user interacts
-    music.volume = 0.3; // Set volume to 30%
+// Handle JOIN button click
+joinButton.addEventListener('click', () => {
+    loadingScreen.classList.add('fade-out');
     
-    const playPromise = music.play();
-    if (playPromise !== undefined) {
-        playPromise.then(() => {
-            isPlaying = true;
-            updateMusicButton();
-        }).catch(error => {
-            // Autoplay was prevented, wait for user interaction
-            console.log('Autoplay prevented. Click anywhere to start music.');
-            isPlaying = false;
-            updateMusicButton();
-        });
-    }
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+        mainContent.classList.remove('hidden');
+        mainContent.classList.add('visible');
+    }, 800);
 });
-
-// Toggle music on button click
-musicToggle.addEventListener('click', () => {
-    if (isPlaying) {
-        music.pause();
-        isPlaying = false;
-    } else {
-        music.play();
-        isPlaying = true;
-    }
-    updateMusicButton();
-});
-
-// Enable music on first user interaction
-document.addEventListener('click', function enableMusic() {
-    if (!isPlaying) {
-        music.play().then(() => {
-            isPlaying = true;
-            updateMusicButton();
-        }).catch(err => {
-            console.log('Music play failed:', err);
-        });
-    }
-}, { once: true });
-
-function updateMusicButton() {
-    const icon = musicToggle.querySelector('.music-icon');
-    if (isPlaying) {
-        icon.textContent = '🔊';
-    } else {
-        icon.textContent = '🔇';
-    }
-}
 
 // ==================== 
 // Copy Address Function
