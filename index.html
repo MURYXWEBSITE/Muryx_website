@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MURYX - In Memory of Teho</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Audio Player (Auto-play loop) -->
+    <audio id="backgroundMusic" loop>
+        <source src="Sad Hamster Violin Meme (Full).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">MURYX</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#tokenomics" class="nav-link">Tokenomics</a>
+                <a href="#donations" class="nav-link">Donations</a>
+            </nav>
+            <button class="music-toggle" id="musicToggle">
+                <span class="music-icon">🔊</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="memorial-badge">
+                    <span>✨ In Memory of Teho ✨</span>
+                </div>
+                <h1 class="hero-title">MURYX</h1>
+                <p class="hero-subtitle">Teho's Legacy Lives On</p>
+                
+                <div class="muryx-images">
+                    <img src="muryx .jpeg" alt="Muryx Mascot" class="muryx-img muryx-img-1">
+                    <img src="muryx 2.jpeg" alt="Muryx Character" class="muryx-img muryx-img-2">
+                </div>
+
+                <div class="contract-address">
+                    <label>Contract Address:</label>
+                    <div class="address-box">
+                        <span id="contractAddress">9jFbN6wAAYPBvnfpSrchXLGx94LEb8f8S6ysadpXpump</span>
+                        <button class="copy-btn" onclick="copyAddress()">
+                            <span class="copy-icon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="https://x.com/i/communities/1986680588175049187" target="_blank" class="btn btn-primary">
+                        <span class="btn-icon">𝕏</span>
+                        Join X Community
+                    </a>
+                    <a href="https://dexscreener.com/solana/hqjgeld8ty2dpb1fnug9rskzyk4ausbgh47tnqpwtswr" target="_blank" class="btn btn-secondary">
+                        <span class="btn-icon">📊</span>
+                        View on DEX Screener
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Muryx</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        In his final moments with us, Teho left behind something truly special - Muryx, his beloved mascot. 
+                        This wasn't just a parting gesture; it was a final gift of love, unity, and hope for the community he cherished so deeply.
+                    </p>
+                    <p>
+                        Muryx represents more than just a cryptocurrency - it's a living tribute to Teho's spirit, his humor, 
+                        and the joy he brought to everyone around him. Through Muryx, Teho's presence continues to inspire and 
+                        unite our community, reminding us that the bonds we create transcend physical boundaries.
+                    </p>
+                    <p>
+                        This token carries forward Teho's legacy of bringing people together, creating moments of happiness, 
+                        and building a community grounded in mutual support and respect. Every transaction, every holder, 
+                        and every community interaction keeps his memory alive and vibrant.
+                    </p>
+                    <p class="about-closing">
+                        Together, we honor Teho's memory by carrying Muryx forward, ensuring that his spirit continues to 
+                        shine through this community, today and for all the days to come. Muryx is not just a token - 
+                        it's a testament to a life well-lived and a community forever grateful.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="muryx .jpeg" alt="Muryx - Teho's Mascot" class="mascot-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="tokenomics">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tokenomics</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="tokenomics-content">
+                <div class="tokenomics-card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Developer Locked Supply</h3>
+                    <p class="lock-amount">3,300,000 Tokens</p>
+                    <p class="lock-description">
+                        In memory of Teho, the developer has permanently locked 3,300,000 tokens, 
+                        demonstrating unwavering commitment to this community-driven project. This lock 
+                        ensures long-term stability and trust within our ecosystem.
+                    </p>
+                    <a href="https://app.streamflow.finance/contract/solana/mainnet/7H1e1mkWnD2ur4JvZoHEVooPU7yT3VKV91fRABoFNZkG" 
+                       target="_blank" 
+                       class="btn btn-outline">
+                        <span class="btn-icon">🔍</span>
+                        View Proof of Lock
+                    </a>
+                </div>
+                <div class="tokenomics-visual">
+                    <img src="muryx 2.jpeg" alt="Muryx Token" class="token-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donations Section -->
+    <section id="donations" class="donations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Community Donations</h2>
+                <div class="title-underline"></div>
+            </div>
+            <p class="donations-intro">
+                The community has come together to support this cause in Teho's memory. 
+                Every contribution helps honor his legacy and strengthen our bonds.
+            </p>
+            <div class="donations-grid">
+                <div class="donation-card">
+                    <div class="donation-number">01</div>
+                    <div class="donation-amount">$250</div>
+                    <a href="#" class="donation-proof">Proof of Donation 1</a>
+                </div>
+                <div class="donation-card">
+                    <div class="donation-number">02</div>
+                    <div class="donation-amount">$250</div>
+                    <a href="#" class="donation-proof">Proof of Donation 2</a>
+                </div>
+                <div class="donation-card">
+                    <div class="donation-number">03</div>
+                    <div class="donation-amount">$250</div>
+                    <a href="#" class="donation-proof">Proof of Donation 3</a>
+                </div>
+                <div class="donation-card">
+                    <div class="donation-number">04</div>
+                    <div class="donation-amount">$250</div>
+                    <a href="#" class="donation-proof">Proof of Donation 4</a>
+                </div>
+            </div>
+            <div class="total-donations">
+                <span class="total-label">Total Donations:</span>
+                <span class="total-amount">$1,000</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">MURYX</h3>
+                    <p class="footer-description">
+                        In memory of Teho - A legacy that lives on through community, 
+                        love, and the spirit of togetherness.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tokenomics">Tokenomics</a></li>
+                        <li><a href="#donations">Donations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://x.com/i/communities/1986680588175049187" target="_blank">X Community</a></li>
+                        <li><a href="https://dexscreener.com/solana/hqjgeld8ty2dpb1fnug9rskzyk4ausbgh47tnqpwtswr" target="_blank">DEX Screener</a></li>
+                        <li><a href="https://app.streamflow.finance/contract/solana/mainnet/7H1e1mkWnD2ur4JvZoHEVooPU7yT3VKV91fRABoFNZkG" target="_blank">Proof of Lock</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contract</h4>
+                    <p class="footer-contract">9jFbN6wAAYPBvnfpSrchXLGx94LEb8f8S6ysadpXpump</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MURYX. Created in loving memory of Teho.</p>
+                <p class="footer-heart">Forever in our hearts 💙</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
