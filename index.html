@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MURYX - In Memory of Teho</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -24,9 +24,6 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <span class="logo-text">MURYX</span>
-            </div>
             <nav class="nav">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -47,11 +44,9 @@
                     <img src="muryx .jpeg" alt="Muryx Mascot" class="muryx-img muryx-img-1">
                 </div>
 
-                <div class="contract-address-simple">
+                <div class="contract-address-clickable" id="contractBox" onclick="copyAddress()">
                     <span id="contractAddress">9jFbN6wAAYPBvnfpSrchXLGx94LEb8f8S6ysadpXpump</span>
-                    <button class="copy-btn-simple" onclick="copyAddress()">
-                        <span class="copy-icon">📋</span>
-                    </button>
+                    <span class="copied-notification" id="copiedNotification">COPIED!</span>
                 </div>
 
                 <div class="cta-buttons">

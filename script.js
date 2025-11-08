@@ -2,19 +2,23 @@
 // Loading Screen
 // ====================
 
-const loadingScreen = document.getElementById('loadingScreen');
-const mainContent = document.getElementById('mainContent');
-const joinButton = document.getElementById('joinButton');
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const mainContent = document.getElementById('mainContent');
+    const joinButton = document.getElementById('joinButton');
 
-// Handle JOIN button click
-joinButton.addEventListener('click', () => {
-    loadingScreen.classList.add('fade-out');
-    
-    setTimeout(() => {
-        loadingScreen.style.display = 'none';
-        mainContent.classList.remove('hidden');
-        mainContent.classList.add('visible');
-    }, 800);
+    // Handle JOIN button click
+    if (joinButton) {
+        joinButton.addEventListener('click', () => {
+            loadingScreen.classList.add('fade-out');
+            
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                mainContent.classList.add('visible');
+            }, 800);
+        });
+    }
 });
 
 // ==================== 
@@ -23,6 +27,8 @@ joinButton.addEventListener('click', () => {
 
 function copyAddress() {
     const address = document.getElementById('contractAddress').textContent;
+    const notification = document.getElementById('copiedNotification');
+    const box = document.getElementById('contractBox');
     
     // Create temporary textarea element
     const textarea = document.createElement('textarea');
@@ -38,14 +44,22 @@ function copyAddress() {
     try {
         document.execCommand('copy');
         
-        // Show feedback
-        const copyBtn = document.querySelector('.copy-btn');
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<span style="color: #00ff00;">✓</span>';
+        // Add copied class to hide text
+        if (box) {
+            box.classList.add('copied');
+        }
         
-        setTimeout(() => {
-            copyBtn.innerHTML = originalHTML;
-        }, 2000);
+        // Show notification
+        if (notification) {
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                if (box) {
+                    box.classList.remove('copied');
+                }
+            }, 2000);
+        }
     } catch (err) {
         console.error('Failed to copy:', err);
     }
@@ -114,9 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // ====================
 
 let lastScroll = 0;
-const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (!header) return;
+    
     const currentScroll = window.pageYOffset;
     
     // Add shadow on scroll
